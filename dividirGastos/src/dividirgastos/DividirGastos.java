@@ -12,7 +12,8 @@ public class DividirGastos {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        Bill bill = new Bill();
+        ejecutador.launch(bill);
         
     }
     
