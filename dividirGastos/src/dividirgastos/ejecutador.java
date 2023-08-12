@@ -84,31 +84,35 @@ public class ejecutador {
     }
 
     private static double calculateAmountOwed(String friendName, Expenses[] expenses, int count) {
-        double totalOwed = 0.0;
-        for (int i = 0; i < count; i++) {
-            Expenses expense = expenses[i];
-            if (expense.getPayer().getName().equals(friendName)) {
-                totalOwed -= expense.getTotal();
-            }
-            if (expense.getParticipant1() != null && expense.getParticipant1().getName().equals(friendName)) {
-                totalOwed += expense.getTotal() / expense.getNumParticipants();
-            }
-            if (expense.getParticipant2() != null && expense.getParticipant2().getName().equals(friendName)) {
-                totalOwed += expense.getTotal() / expense.getNumParticipants();
-            }
-            if (expense.getParticipant3() != null && expense.getParticipant3().getName().equals(friendName)) {
-                totalOwed += expense.getTotal() / expense.getNumParticipants();
-            }
-            if (expense.getParticipant4() != null && expense.getParticipant4().getName().equals(friendName)) {
-                totalOwed += expense.getTotal() / expense.getNumParticipants();
-            }
-            if (expense.getParticipant5() != null && expense.getParticipant5().getName().equals(friendName)) {
-                totalOwed += expense.getTotal() / expense.getNumParticipants();
-            }
-            if (expense.getParticipant6() != null && expense.getParticipant6().getName().equals(friendName)) {
-                totalOwed += expense.getTotal() / expense.getNumParticipants();
-            }
+    double totalOwed = 0.0;
+    for (int i = 0; i < count; i++) {
+        Expenses expense = expenses[i];
+        
+        // Comprobamos si el amigo es el que pagó el gasto
+        if (expense.getPayer().getName().equals(friendName)) {
+            totalOwed -= expense.getTotal();
         }
-        return totalOwed;
+        
+        // Comprobamos si el amigo es uno de los participantes y sumamos su parte proporcional
+        if (expense.getParticipant1() != null && expense.getParticipant1().getName().equals(friendName)) {
+            totalOwed += expense.getTotal() / expense.getNumParticipants();
+        }
+        if (expense.getParticipant2() != null && expense.getParticipant2().getName().equals(friendName)) {
+            totalOwed += expense.getTotal() / expense.getNumParticipants();
+        }
+        if (expense.getParticipant3() != null && expense.getParticipant3().getName().equals(friendName)) {
+            totalOwed += expense.getTotal() / expense.getNumParticipants();
+        }
+        if (expense.getParticipant4() != null && expense.getParticipant4().getName().equals(friendName)) {
+            totalOwed += expense.getTotal() / expense.getNumParticipants();
+        }
+        if (expense.getParticipant5() != null && expense.getParticipant5().getName().equals(friendName)) {
+            totalOwed += expense.getTotal() / expense.getNumParticipants();
+        }
+        if (expense.getParticipant6() != null && expense.getParticipant6().getName().equals(friendName)) {
+            totalOwed += expense.getTotal() / expense.getNumParticipants();
+        }
     }
+    return totalOwed;
+}
 }

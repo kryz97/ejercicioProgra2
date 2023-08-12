@@ -9,12 +9,14 @@ package dividirgastos;
  * @author chris
  */
 public class Friends {
+
+    private String name;
     public String Josua;
     public String Greivin;
     public String Guillermo;
     public String Andres;
     public String Tavo;
-    public String David ;
+    public String David;
 
     public Friends(String Josua, String Greivin, String Guillermo, String Andres, String Tavo, String David) {
         this.Josua = Josua;
@@ -72,14 +74,12 @@ public class Friends {
     public void setDavid(String David) {
         this.David = David;
     }
-
-    Object getName() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Friends(String name) {
+        this.name = name;
     }
-    
-    
-    
-    
-    
-    
+
+    public String getName() {
+        return name;
+    }
+
 }
