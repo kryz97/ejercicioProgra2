@@ -50,36 +50,31 @@ public class ejecutador {
     }
 
     private static double calculateAmountOwed(String friendName, Expenses[] expenses, int count) {
-        double totalOwed = 0.0;
-        for (int i = 0; i < count; i++) {
-            Expenses expense = expenses[i];
-            if (expense.getPayer().getJosua().equals(friendName)
-                    || expense.getPayer().getGreivin().equals(friendName)
-                    || expense.getPayer().getGuillermo().equals(friendName)
-                    || expense.getPayer().getAndres().equals(friendName)
-                    || expense.getPayer().getTavo().equals(friendName)
-                    || expense.getPayer().getDavid().equals(friendName)) {
-                totalOwed -= expense.getTotal();
-            }
-            if (expense.getParticipant1() != null && expense.getParticipant1().getJosua().equals(friendName)) {
-                totalOwed += expense.getTotal() / 6;
-            }
-            if (expense.getParticipant2() != null && expense.getParticipant2().getGreivin().equals(friendName)) {
-                totalOwed += expense.getTotal() / 6;
-            }
-            if (expense.getParticipant3() != null && expense.getParticipant3().getGuillermo().equals(friendName)) {
-                totalOwed += expense.getTotal() / 6;
-            }
-            if (expense.getParticipant4() != null && expense.getParticipant4().getAndres().equals(friendName)) {
-                totalOwed += expense.getTotal() / 6;
-            }
-            if (expense.getParticipant5() != null && expense.getParticipant5().getTavo().equals(friendName)) {
-                totalOwed += expense.getTotal() / 6;
-            }
-            if (expense.getParticipant6() != null && expense.getParticipant6().getDavid().equals(friendName)) {
-                totalOwed += expense.getTotal() / 6;
-            }
+    double totalOwed = 0.0;
+    for (int i = 0; i < count; i++) {
+        Expenses expense = expenses[i];
+        if (expense.getPayer().getName().equals(friendName)) {
+            totalOwed -= expense.getTotal();
         }
-        return totalOwed;
+        if (expense.getParticipant1() != null && expense.getParticipant1().getName().equals(friendName)) {
+            totalOwed += expense.getTotal() / expense.getNumParticipants();
+        }
+        if (expense.getParticipant2() != null && expense.getParticipant2().getName().equals(friendName)) {
+            totalOwed += expense.getTotal() / expense.getNumParticipants();
+        }
+        if (expense.getParticipant3() != null && expense.getParticipant3().getName().equals(friendName)) {
+            totalOwed += expense.getTotal() / expense.getNumParticipants();
+        }
+        if (expense.getParticipant4() != null && expense.getParticipant4().getName().equals(friendName)) {
+            totalOwed += expense.getTotal() / expense.getNumParticipants();
+        }
+        if (expense.getParticipant5() != null && expense.getParticipant5().getName().equals(friendName)) {
+            totalOwed += expense.getTotal() / expense.getNumParticipants();
+        }
+        if (expense.getParticipant6() != null && expense.getParticipant6().getName().equals(friendName)) {
+            totalOwed += expense.getTotal() / expense.getNumParticipants();
+        }
     }
+    return totalOwed;
+}
 }

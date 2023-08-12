@@ -72,6 +72,10 @@ public class Friends {
     public void setDavid(String David) {
         this.David = David;
     }
+
+    Object getName() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
     
